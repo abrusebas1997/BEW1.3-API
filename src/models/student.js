@@ -3,10 +3,11 @@ const Schema = mongoose.Schema;
 
 // TODO: Replace this with actual model
 
-const ThingSchema = new Schema({
+const EmployeeSchema = new Schema({
   name: { type: String }
+
 })
 
-Thing = mongoose.model('Thing', ThingSchema);
+Employee = mongoose.model('Employee', EmployeeSchema);
 
-module.exports = Thing;
+module.exports = Employee;

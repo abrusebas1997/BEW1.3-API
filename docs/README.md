@@ -2,7 +2,7 @@
 
 ## Description
 
-Find restaurants for cats based on the city and zip-code.
+This page will contains information about how to access all students data. Also, more information about them can be added like name, major , age or email.
 
 ## Installation
 
@@ -19,7 +19,7 @@ npm start
 
 ## Get about Page
 
-Send a request to `/catrestaurant/about` to get the following response:
+Send a request to `/student/about` to get the following response:
 
 ```json
 {
@@ -27,49 +27,49 @@ Send a request to `/catrestaurant/about` to get the following response:
 }
 ```
 
-## Get all the restaurants for CATS
+## Get all the students of Make School
 
 ```json
 [
   {
-    location: 'San Francisco'
-    zip_code: '94109'
-    restaurant_name: 'Black Cat',
-    type_food: 'vegetarian',
+    name: 'Dillan'
+    student_major: 'Back End Web'
+    student_age: '24',
+    email: 'Dillan_16@gmail.com',
     _id: 987654321
   }
 ]
 ```
 
-## Get a single restaurant for CATS
+## Get a single student for CATS
 
 ```json
 [
   {
-    location: 'San Francisco'
-    zip_code: '94109'
-    restaurant_name: 'Black Cat',
-    type_food: 'vegetarian',
-    _id: 987654321
+      name: 'Dillan'
+      student_major: 'Back End Web'
+      student_age: '24',
+      email: 'Dillan_16@gmail.com',
+      _id: 987654321
   }
 ]
 ```
-## Create a Cat Restaurant
+## Create a Student
 
-Send a POST request to `/catrestaurant/` with the following information:
-
-```
-location: string,
-zip_code: string,
-restaurant_name: string,
-type_food: string
+Send a POST request to `/student/` with the following information:
 
 ```
+name: string,
+student_major: string,
+student_age: number,
+email: string
 
-## Update a Cat Restaurant
+```
+
+## Update a Student
 
 TODO
 
-## Delete a Cat Restaurant
+## Delete a Student
 
 TODO

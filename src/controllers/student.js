@@ -1,13 +1,13 @@
 const express = require('express')
 
-const Thing = require('../models/thing.js')
+const Student = require('../models/student.js')
 
 const router = express.Router(); // eslint-disable-line new-cap
 
-// GET /api/thing
+// GET /api/Student
 router.get('/', (req, res) => {
-  Thing.find().then(things => {
-    res.send({ things })
+  Student.find().then(students => {
+    res.send({ students })
   })
 })
 

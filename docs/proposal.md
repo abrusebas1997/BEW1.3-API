@@ -1,1 +1,1 @@
-I would like to create an API in which users can CRUD restaurants that are specifically for cats, to make a bigger and more united cat community. More information can be added to this, such as type of food, drinks and pictures.
+

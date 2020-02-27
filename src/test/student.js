@@ -18,12 +18,12 @@ after((done) => {
   done();
 });
 
-describe('## Thing APIs', () => {
+describe('## Student APIs', () => {
   // TODO: Implement more tests.
 
   it('should load homepage', () => {
     chai.request(app)
-      .get('/api/thing')
+      .get('/api/student')
       .end((err, res) => {
         if (err) {
           return done(err);
