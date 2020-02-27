@@ -21,10 +21,13 @@ router.post("/sign-up", (req, res) => {
 });
 
 // LOGOUT
-   app.get('/logout', (req, res) => {
-       res.clearCookie('nToken');
-       res.redirect('/');
-   });
+router.get('/logout', (req, res) => {
+    res.clearCookie('nToken');
+    res.json({"Logout": "success"})
+});
+
+
+
 // LOGIN
 router.post("/login", (req, res) => {
     const username = req.body.username;

@@ -38,6 +38,13 @@ router.post('/', (req, res) => {
   }
 })
 
+// Delete a single student
+router.delete("/delete/:name", (req, res) => {
+  Component.findOneAndRemove({name : req.params.name}, (err,Component) => {
+    res.json(result)
+  });
+})
+
 // TODO: Add more routes.
 
 

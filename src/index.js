@@ -4,7 +4,7 @@ const util = require('util');
 require('dotenv').config();
 
 const app = require('./config/express');
-const router = require('./controllers/thing.js');
+const router = require('./controllers/student.js');
 
 mongoose.Promise = Promise;
 
