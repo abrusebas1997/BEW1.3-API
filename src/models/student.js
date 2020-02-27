@@ -3,11 +3,14 @@ const Schema = mongoose.Schema;
 
 // TODO: Replace this with actual model
 
-const EmployeeSchema = new Schema({
-  name: { type: String }
+const StudentSchema = new Schema({
+  name: { type: String },
+  student_major: { type: String},
+  student_age: {type: Number},
+  email: {type: String},
 
 })
 
-Employee = mongoose.model('Employee', EmployeeSchema);
+Student = mongoose.model('Student', StudentSchema);
 
-module.exports = Employee;
+module.exports = Student;
