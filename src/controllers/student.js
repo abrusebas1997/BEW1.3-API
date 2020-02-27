@@ -5,6 +5,7 @@ const Student = require('../models/student.js')
 const router = express.Router(); // eslint-disable-line new-cap
 
 // GET list of Students
+// IF COMMENT OUT ALL THE REQ.USER YOU CAN TRY IT ON POST MAN
 router.get('/', (req, res) => {
   if (!req.user) {
     res.send({ err: 'Must be logged in' })
