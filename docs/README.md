@@ -23,7 +23,7 @@ Send a request to `/student/about` to get the following response:
 
 ```json
 {
-  message: 'Find restaurants for cats based on the city and zip-code'
+  message: 'Find students based on the name or email'
 }
 ```
 
