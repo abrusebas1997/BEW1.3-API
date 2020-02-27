@@ -9,39 +9,39 @@ router.get('/', (req, res) => {
   if (!req.user) {
     res.send({ err: 'Must be logged in' })
   } else {
-    Student.find().then(result => {
-      res.json(result);
+    Student.find().then(student => {
+      res.json(student);
     })
   }
 })
 
 // GET specific student
-router.get('/:id', (req, res) => {
+router.get('/:name', (req, res) => {
   if (!req.user) {
     res.send({ err: 'Must be logged in' })
   } else {
-    Dog.findOne({_id: req.params.id}).then(result => {
-      res.json(result);
+    Student.findOne({name: req.params.name}).then(student => {
+      res.json(student);
     })
   }
 })
 
 // POST new student.
-router.post('/', (req, res) => {
+router.post('/add/student', (req, res) => {
   if (!req.user) {
     res.send({ err: 'Must be logged in' })
   } else {
     const student = new Student(req.body)
-    dog.save().then(result => {
-      res.json(result)
+    student.save().then(student => {
+      res.json(student)
     })
   }
 })
 
 // Delete a single student
 router.delete("/delete/:name", (req, res) => {
-  Component.findOneAndRemove({name : req.params.name}, (err,Component) => {
-    res.json(result)
+  Student.findOneAndRemove({name : req.params.name}, (err, Student) => {
+    res.json(student)
   });
 })
 

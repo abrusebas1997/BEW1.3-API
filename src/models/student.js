@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 // TODO: Replace this with actual model
 
 const StudentSchema = new Schema({
-  name: { type: String },
+  name: { type: String, required: true },
   student_major: { type: String},
   student_age: {type: Number},
   email: {type: String},

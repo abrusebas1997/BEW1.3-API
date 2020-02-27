@@ -1,4 +1,4 @@
-# RESTAURANTS FOR CATS API
+# Students API
 
 ## Description
 
