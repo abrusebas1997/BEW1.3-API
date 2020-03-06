@@ -2,16 +2,14 @@ const app = require("../index.js");
 const mongoose = require('mongoose');
 const chai = require('chai'); // eslint-disable-line import/newline-after-import
 const chaiHttp = require("chai-http");
+const Student = require('../models/student');
+var assert = require('assert');
 
 chai.config.includeStack = true;
 
 chai.use(chaiHttp);
 
-/**
- * root level hooks
- */
 after((done) => {
-  // required because https://github.com/Automattic/mongoose/issues/1251#issuecomment-65793092
   mongoose.models = {};
   mongoose.modelSchemas = {};
   mongoose.connection.close();
@@ -20,16 +18,20 @@ after((done) => {
 
 describe('## Student APIs', () => {
   // TODO: Implement more tests.
+  const newStudent = {
+      name: 'test component',
+      student_major: 'computer science',
+      student_age: '21',
+      email: 'aaabbbccc@gmail.com'
+  };
 
-  it('should load homepage', () => {
-    chai.request(app)
-      .get('/api/student')
-      .end((err, res) => {
-        if (err) {
-          return done(err);
-        }
-        res.status.should.be.equal(200);
-        return done();
-      })
-  })
+  // it('should load homepage', () => {
+  //   chai.request(app)
+  //     .get('/api/student')
+  //     .end((err, res) => {
+  //         if (res) {
+  //           assert.equal(res.status, 200);
+  //       }
+  //     })
+  // });
 });

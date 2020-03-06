@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 const util = require('util');
-
 require('dotenv').config();
-
 const app = require('./config/express');
-const router = require('./controllers/student.js');
+const router = require('./controllers/index.js');
+
+
+
 
 mongoose.Promise = Promise;
 
-// connect to mongo db
 const mongoUri = process.env.MONGO_HOST;
 mongoose.connect(
   mongoUri,
@@ -23,10 +23,7 @@ mongoose.connection.on('error', () => {
 // Routes
 app.use(router);
 
-// module.parent check is required to support mocha watch
-// src: https://github.com/mochajs/mocha/issues/1912
 if (!module.parent) {
-  // listen on port config.port
   app.listen(process.env.PORT, () => {
     console.info(`server started on port ${process.env.PORT} (${process.env.NODE_ENV})`); // eslint-disable-line no-console
   });

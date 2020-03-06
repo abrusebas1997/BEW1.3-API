@@ -46,7 +46,26 @@ router.delete("/delete/:name", (req, res) => {
   });
 })
 
-// TODO: Add more routes.
-
+// Update a single student
+router.post("/update/student", (req, res) => {
+  console.log("updating student")
+  console.log(req.body)
+  Student.findOne({_id: req.body.id}).exec()
+  .then(function(student){
+    student.email = req.body.email || student.email;
+    student.name = req.body.name || student.name;
+      console.log(`${req.body.name} has been updated!`)
+      res.json({'update': "success", 'student': student})
+      return student.save();
+  })
+  .then(function(){
+      // Save successful! Now redirect
+      // res.json({`/${req.body.name}`});
+  })
+  .catch(function(err){
+      // There was an error either finding the document or saving it.
+      console.log(err);
+  });
+})
 
 module.exports = router;

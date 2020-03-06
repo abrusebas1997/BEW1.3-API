@@ -9,7 +9,8 @@ const StudentSchema = new Schema({
   student_age: {type: Number},
   email: {type: String},
 
-})
+});
+
 
 Student = mongoose.model('Student', StudentSchema);
 

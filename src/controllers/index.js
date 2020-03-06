@@ -10,4 +10,9 @@ router.use('/student', studentRoutes);
 
 router.use('/auth', authRoutes);
 
+router.get('/*', (req, res) => {
+    res.status(400).json({ message: 'no route found.' });
+});
+
+
 module.exports = router;

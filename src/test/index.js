@@ -6,18 +6,3 @@ const chaiHttp = require("chai-http");
 chai.config.includeStack = true;
 
 chai.use(chaiHttp);
-
-/**
- * root level hooks
- */
-after((done) => {
-  // required because https://github.com/Automattic/mongoose/issues/1251#issuecomment-65793092
-  mongoose.models = {};
-  mongoose.modelSchemas = {};
-  mongoose.connection.close();
-  done();
-});
-
-describe('## Index', () => {
-  // TODO: Implement tests.
-});
