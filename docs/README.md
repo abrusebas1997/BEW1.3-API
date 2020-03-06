@@ -4,6 +4,9 @@
 
 This page will contains information about how to access all students data. Also, more information about them can be added like name, major , age or email.
 
+.Heroku app: https://apistudents1997.herokuapp.com/
+.Docsify: https://abrusebas1997.github.io/BEW1.3-API/
+
 ## Installation
 
 To install this API, clone this repository and run it.
