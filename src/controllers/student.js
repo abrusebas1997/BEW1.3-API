@@ -63,7 +63,6 @@ router.post("/update/student", (req, res) => {
       // res.json({`/${req.body.name}`});
   })
   .catch(function(err){
-      // There was an error either finding the document or saving it.
       console.log(err);
   });
 })
