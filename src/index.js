@@ -3,20 +3,15 @@ const util = require('util');
 require('dotenv').config();
 const app = require('./config/express');
 const router = require('./controllers/index.js');
-
+const port = process.env.PORT
 
 
 
 mongoose.Promise = Promise;
 
-const mongoUri = process.env.MONGO_HOST;
-mongoose.connect(
-  mongoUri,
-  { server: { socketOptions: { keepAlive: 1 } } }
-);
-mongoose.connection.on('error', () => {
-  throw new Error(`unable to connect to database: ${mongoUri}`);
-});
+const mongo_uri = process.env.MONGODB_URI
+mongoose.connect(mongo_uri)
+
 
 // # TODO: Any additional config changes belong here.
 
